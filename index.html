@@ -1,507 +1,869 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Renato Abrantes – Currículo</title>
-    <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-color: #020617;
-            --accent: #38bdf8;
-            --accent-soft: rgba(56, 189, 248, 0.12);
-            --text-main: #e5e7eb;
-            --text-muted: #9ca3af;
-            --border-soft: #1f2937;
-            --radius-lg: 18px;
-            --radius-xl: 24px;
-            --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.75);
-            --max-width: 980px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renato Abrantes · Cloud & IAM Engineer</title>
+  <meta name="description" content="Portfolio website of Renato Abrantes – Cloud & IAM Engineer focused on Azure, identity and automation." />
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-soft: #020819;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.12);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: rgba(148, 163, 184, 0.35);
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --shadow: 0 22px 55px rgba(15, 23, 42, 0.9);
+      --max-width: 1080px;
+      --nav-height: 70px;
+    }
 
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: radial-gradient(circle at top left, #1f2937 0, #020617 45%, #020617 100%);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            padding: 32px 16px;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .page {
-            width: 100%;
-            max-width: var(--max-width);
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        .card {
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.94));
-            border-radius: var(--radius-xl);
-            padding: 26px 20px;
-            box-shadow: var(--shadow-soft);
-            border: 1px solid rgba(148, 163, 184, 0.18);
-            backdrop-filter: blur(16px);
-        }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #1f2937 0, #020617 50%, #000 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
 
-        @media (min-width: 768px) {
-            .card {
-                padding: 32px 32px 30px 32px;
-            }
-        }
+    a {
+      color: inherit;
+    }
 
-        header {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-            margin-bottom: 26px;
-        }
+    .page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 16px 40px 16px;
+    }
 
-        @media (min-width: 768px) {
-            header {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
-        }
+    /* NAVBAR */
 
-        .profile {
-            display: flex;
-            gap: 18px;
-            align-items: center;
-        }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(20px);
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.75), transparent);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.9);
+    }
 
-        .avatar {
-            width: 72px;
-            height: 72px;
-            border-radius: 50%;
-            background: conic-gradient(from 180deg, #38bdf8, #6366f1, #ec4899, #38bdf8);
-            padding: 2px;
-            flex-shrink: 0;
-        }
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+    }
 
-        .avatar-inner {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: radial-gradient(circle at 30% 20%, #1f2937, #020617 60%, #020617 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 26px;
-            color: var(--accent);
-        }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-        .profile-text h1 {
-            font-size: 1.7rem;
-            letter-spacing: 0.03em;
-        }
+    .nav-badge {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: conic-gradient(from 180deg, #38bdf8, #6366f1, #ec4899, #38bdf8);
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        .profile-text h2 {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--accent);
-            margin-top: 4px;
-        }
+    .nav-badge-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #020617;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
 
-        .profile-text p {
-            margin-top: 6px;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            max-width: 460px;
-        }
+    .nav-name {
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
 
-        .contact {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+    .nav-links {
+      display: flex;
+      gap: 14px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
 
-        .chip {
-            border-radius: 999px;
-            border: 1px solid var(--border-soft);
-            padding: 6px 12px;
-            font-size: 0.8rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background-color: rgba(15, 23, 42, 0.9);
-        }
+    .nav-links a {
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 999px;
+      transition: all 0.2s ease;
+    }
 
-        .chip strong {
-            font-weight: 500;
-            color: var(--text-muted);
-        }
+    .nav-links a:hover {
+      color: var(--text);
+      background: rgba(15, 23, 42, 0.9);
+    }
 
-        .chip a {
-            color: var(--accent);
-            text-decoration: none;
-        }
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+    }
 
-        .chip a:hover {
-            text-decoration: underline;
-        }
+    /* HERO */
 
-        main {
-            display: grid;
-            gap: 18px;
-        }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 26px;
+      padding-top: 32px;
+      padding-bottom: 32px;
+      align-items: center;
+    }
 
-        @media (min-width: 900px) {
-            main {
-                grid-template-columns: 1.2fr 1fr;
-                align-items: flex-start;
-            }
-        }
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 26px;
+      }
+    }
 
-        section {
-            background: radial-gradient(circle at top left, var(--accent-soft), transparent 55%);
-            border-radius: var(--radius-lg);
-            border: 1px solid rgba(148, 163, 184, 0.18);
-            padding: 16px 16px 18px 16px;
-        }
+    .hero-main {
+      animation: fadeUp 0.8s ease-out forwards;
+      opacity: 0;
+      transform: translateY(12px);
+    }
 
-        section h3 {
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--text-muted);
-            margin-bottom: 10px;
-        }
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: rgba(15, 23, 42, 0.85);
+      margin-bottom: 14px;
+    }
 
-        section h3 span {
-            color: var(--accent);
-        }
+    .hero-kicker-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.25);
+    }
 
-        .section-body {
-            font-size: 0.9rem;
-            color: var(--text-main);
-        }
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw, 2.7rem);
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      margin-bottom: 10px;
+    }
 
-        .section-body p {
-            line-height: 1.6;
-        }
+    .hero-title span {
+      background: linear-gradient(135deg, #38bdf8, #6366f1, #ec4899);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
 
-        .tag-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 8px;
-        }
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
 
-        .tag {
-            font-size: 0.8rem;
-            padding: 5px 10px;
-            border-radius: 999px;
-            background-color: rgba(15, 23, 42, 0.9);
-            border: 1px solid rgba(75, 85, 99, 0.9);
-            white-space: nowrap;
-        }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
 
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 4px;
-        }
+    .btn {
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      padding: 9px 16px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: transform 0.14s ease, box-shadow 0.14s ease, background 0.16s ease, color 0.16s ease;
+    }
 
-        .timeline-item {
-            padding: 8px 10px;
-            border-radius: 12px;
-            background-color: rgba(15, 23, 42, 0.92);
-            border: 1px solid rgba(55, 65, 81, 0.9);
-        }
+    .btn-primary {
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      color: #0b1120;
+      box-shadow: 0 16px 30px rgba(56, 189, 248, 0.4);
+      font-weight: 600;
+    }
 
-        .timeline-item-header {
-            display: flex;
-            justify-content: space-between;
-            gap: 8px;
-            margin-bottom: 4px;
-        }
+    .btn-primary:hover {
+      transform: translateY(-1px) scale(1.01);
+      box-shadow: 0 20px 40px rgba(56, 189, 248, 0.5);
+    }
 
-        .timeline-title {
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
+    .btn-ghost {
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      background: rgba(15, 23, 42, 0.92);
+      color: var(--text);
+    }
 
-        .timeline-meta {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
+    .btn-ghost:hover {
+      transform: translateY(-1px);
+      background: rgba(15, 23, 42, 1);
+    }
 
-        .timeline-company {
-            font-size: 0.8rem;
-            color: var(--accent);
-            margin-bottom: 2px;
-        }
+    .hero-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
 
-        .timeline-desc {
-            font-size: 0.85rem;
-            color: var(--text-main);
-        }
+    .hero-meta strong {
+      color: var(--accent);
+      font-weight: 500;
+    }
 
-        .bullet-list {
-            margin-top: 6px;
-            padding-left: 16px;
-            font-size: 0.85rem;
-        }
+    .hero-card {
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 55%);
+      border-radius: var(--radius-xl);
+      padding: 20px 18px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      animation: floatIn 1s ease-out forwards;
+      opacity: 0;
+      transform: translateY(18px);
+    }
 
-        .bullet-list li {
-            margin-bottom: 3px;
-        }
+    .hero-orbit {
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at 20% 0%, rgba(56, 189, 248, 0.2), transparent 60%),
+                  radial-gradient(circle at 80% 100%, rgba(236, 72, 153, 0.18), transparent 60%);
+      opacity: 0.4;
+      filter: blur(6px);
+      z-index: -1;
+      animation: slowPulse 12s ease-in-out infinite alternate;
+    }
 
-        footer {
-            margin-top: 18px;
-            text-align: center;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
+    .hero-tagline {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
 
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
+    .hero-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
 
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    .hero-pill {
+      font-size: 0.78rem;
+      padding: 5px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-stat-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 10px;
+      font-size: 0.78rem;
+    }
+
+    .hero-stat {
+      flex: 1;
+      padding: 7px 9px;
+      border-radius: 12px;
+      border: 1px solid rgba(55, 65, 81, 0.95);
+      background: rgba(15, 23, 42, 0.96);
+    }
+
+    .hero-stat-label {
+      color: var(--muted);
+      font-size: 0.72rem;
+      margin-bottom: 3px;
+    }
+
+    .hero-stat-value {
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slowPulse {
+      from { transform: scale(1); opacity: 0.35; }
+      to { transform: scale(1.06); opacity: 0.5; }
+    }
+
+    /* SECTIONS */
+
+    section {
+      margin-bottom: 32px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .section-heading {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .section-heading span {
+      color: var(--accent);
+    }
+
+    .section-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    @media (min-width: 900px) {
+      .section-grid.two-cols {
+        grid-template-columns: 1.1fr 1fr;
+      }
+      .section-grid.three-cols {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .card {
+      background: radial-gradient(circle at top left, var(--accent-soft), transparent 55%);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      padding: 14px 14px 16px 14px;
+      font-size: 0.9rem;
+      position: relative;
+      overflow: hidden;
+      transform: translateY(10px);
+      opacity: 0;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.4s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.95);
+      border-color: rgba(148, 163, 184, 0.9);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 60%);
+    }
+
+    .card-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .card-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .card-body {
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .pill {
+      font-size: 0.78rem;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      background: rgba(15, 23, 42, 0.95);
+      white-space: nowrap;
+    }
+
+    .list {
+      margin-top: 6px;
+      padding-left: 18px;
+      font-size: 0.86rem;
+      color: var(--text);
+    }
+
+    .list li {
+      margin-bottom: 3px;
+    }
+
+    /* CONTACT */
+
+    .contact-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    @media (min-width: 720px) {
+      .contact-grid {
+        grid-template-columns: 1.4fr 1fr;
+      }
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.86rem;
+    }
+
+    .contact-chip {
+      border-radius: 999px;
+      border: 1px solid rgba(75, 85, 99, 0.95);
+      padding: 6px 11px;
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .contact-chip strong {
+      color: var(--muted);
+      font-weight: 500;
+      margin-right: 6px;
+    }
+
+    .contact-chip a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact-chip a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 26px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(15, 23, 42, 0.95);
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-<div class="page">
-    <div class="card">
-        <header>
-            <div class="profile">
-                <div class="avatar">
-                    <div class="avatar-inner">A</div>
-                </div>
-                <div class="profile-text">
-                    <h1>Renato Abrantes</h1>
-                    <h2>Junior Cloud &amp; IAM Engineer</h2>
-                    <p>
-                        Profissional de IT focado em identidade, automação e cloud. Experiência em
-                        Active Directory, Azure AD, PowerShell e monitorização em larga escala.
-                        À procura de desafios onde possa crescer, aprender e trazer impacto real.
-                    </p>
-                </div>
-            </div>
-            <div class="contact">
-                <div class="chip">
-                    <strong>Email</strong>
-                    <a href="mailto:teu.email@exemplo.com">teu.email@exemplo.com</a>
-                </div>
-                <div class="chip">
-                    <strong>LinkedIn</strong>
-                    <a href="https://www.linkedin.com/in/teu-perfil" target="_blank">/in/teu-perfil</a>
-                </div>
-                <div class="chip">
-                    <strong>GitHub</strong>
-                    <a href="https://github.com/o_teu_user" target="_blank">@o_teu_user</a>
-                </div>
-                <div class="chip">
-                    <strong>Localização</strong>
-                    Lisboa, Portugal
-                </div>
-            </div>
-        </header>
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <div class="nav-badge">
+          <div class="nav-badge-inner">AA</div>
+        </div>
+        <div>
+          <div class="nav-name">Renato Abrantes</div>
+          <div style="font-size: 0.75rem; color: var(--muted);">
+            Cloud &amp; IAM Engineer
+          </div>
+        </div>
+      </div>
 
-        <main>
-            <!-- Coluna principal -->
-            <div class="main-column">
-                <section>
-                    <h3><span>Sobre</span> mim</h3>
-                    <div class="section-body">
-                        <p>
-                            Sou engenheiro de informática com foco em cloud computing e gestão de identidades.
-                            Tenho experiência em ambientes híbridos (AD + Azure AD), automação com PowerShell
-                            e recolha de logs para monitorização e segurança. Gosto de resolver problemas,
-                            simplificar processos e criar soluções robustas, mas práticas.
-                        </p>
-                    </div>
-                </section>
-
-                <section>
-                    <h3><span>Experiência</span> profissional</h3>
-                    <div class="section-body timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-item-header">
-                                <div class="timeline-title">Técnico de Helpdesk / IAM</div>
-                                <div class="timeline-meta">2023 — Presente</div>
-                            </div>
-                            <div class="timeline-company">Empresa XYZ (Lisboa)</div>
-                            <div class="timeline-desc">
-                                Suporte a utilizadores, gestão de contas e permissões em ambiente híbrido.
-                            </div>
-                            <ul class="bullet-list">
-                                <li>Gestão de utilizadores e grupos em Active Directory e Azure AD.</li>
-                                <li>Automação de tarefas repetitivas com scripts em PowerShell.</li>
-                                <li>Implementação de soluções de logging centralizado para máquinas cliente.</li>
-                            </ul>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-item-header">
-                                <div class="timeline-title">Projetos pessoais / académicos</div>
-                                <div class="timeline-meta">2021 — Presente</div>
-                            </div>
-                            <div class="timeline-company">Freelance &amp; Universidade</div>
-                            <div class="timeline-desc">
-                                Desenvolvimento de scripts e aplicações focadas em automação e cloud.
-                            </div>
-                            <ul class="bullet-list">
-                                <li>Projeto de envio de logs para Azure Log Analytics via Logs Ingestion API.</li>
-                                <li>Aplicações com .NET / Python para apoio à gestão de infraestruturas.</li>
-                                <li>Projetos académicos de bases de dados, redes e sistemas operativos.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h3><span>Projetos</span> em destaque</h3>
-                    <div class="section-body timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-item-header">
-                                <div class="timeline-title">Monitorização de administradores locais</div>
-                                <div class="timeline-meta">PowerShell · Azure · Segurança</div>
-                            </div>
-                            <div class="timeline-desc">
-                                Script para recolher informação de administradores locais em PCs,
-                                enviar para o Azure Log Analytics e permitir auditoria centralizada.
-                            </div>
-                            <ul class="bullet-list">
-                                <li>Uso de Enterprise Application com certificado para autenticação segura.</li>
-                                <li>Criação de Data Collection Rule e tabela customizada em Log Analytics.</li>
-                                <li>Foco em minimizar custos e maximizar segurança.</li>
-                            </ul>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-item-header">
-                                <div class="timeline-title">TravelBuddy (projeto académico)</div>
-                                <div class="timeline-meta">Python · APIs · PDF</div>
-                            </div>
-                            <div class="timeline-desc">
-                                Aplicação para planear viagens com integração de voos, atrações turísticas
-                                e geração de PDF com resumo do plano de viagem.
-                            </div>
-                            <ul class="bullet-list">
-                                <li>Integração com APIs externas (ex.: Wikipédia).</li>
-                                <li>Exportação de conteúdo para PDF com imagens.</li>
-                                <li>Gestão de dados em base de dados e interface amigável.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <!-- Coluna lateral -->
-            <div class="side-column">
-                <section>
-                    <h3><span>Competências</span> técnicas</h3>
-                    <div class="section-body">
-                        <strong>Cloud &amp; Identidade</strong>
-                        <div class="tag-list">
-                            <span class="tag">Azure AD</span>
-                            <span class="tag">Active Directory</span>
-                            <span class="tag">IAM</span>
-                            <span class="tag">Azure Monitor</span>
-                            <span class="tag">Log Analytics</span>
-                        </div>
-
-                        <strong style="display:block; margin-top:10px;">Linguagens &amp; automação</strong>
-                        <div class="tag-list">
-                            <span class="tag">PowerShell</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">Bash (básico)</span>
-                            <span class="tag">SQL</span>
-                        </div>
-
-                        <strong style="display:block; margin-top:10px;">Outros</strong>
-                        <div class="tag-list">
-                            <span class="tag">Windows Server</span>
-                            <span class="tag">Redes (básico)</span>
-                            <span class="tag">Git &amp; GitHub</span>
-                            <span class="tag">Suporte ao utilizador</span>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h3><span>Formação</span> &amp; Certificações</h3>
-                    <div class="section-body timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-item-header">
-                                <div class="timeline-title">Licenciatura em Engenharia Informática</div>
-                                <div class="timeline-meta">Universidade X · 20XX — 20XX</div>
-                            </div>
-                            <div class="timeline-desc">
-                                Foco em programação, bases de dados, redes e sistemas operativos.
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-item-header">
-                                <div class="timeline-title">Mestrado em Cloud Computing</div>
-                                <div class="timeline-meta">Universidade Y · Em curso</div>
-                            </div>
-                            <div class="timeline-desc">
-                                Temas de computação na cloud, segurança, DevOps e arquiteturas distribuídas.
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-item-header">
-                                <div class="timeline-title">Certificações</div>
-                            </div>
-                            <ul class="bullet-list">
-                                <li>Microsoft Azure Fundamentals (AZ-900)</li>
-                                <li>Security, Compliance &amp; Identity Fundamentals (SC-900)</li>
-                                <li>Microsoft 365 Fundamentals (MS-900)</li>
-                                <!-- Adiciona aqui mais quando tiveres -->
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h3><span>Contacto</span> rápido</h3>
-                    <div class="section-body">
-                        <p>Aberto a oportunidades em:</p>
-                        <div class="tag-list">
-                            <span class="tag">Cloud / Azure</span>
-                            <span class="tag">IAM</span>
-                            <span class="tag">Suporte avançado</span>
-                            <span class="tag">Automação</span>
-                        </div>
-                        <p style="margin-top:10px;">
-                            Se quiseres falar comigo sobre uma oportunidade, envia um email para
-                            <a href="mailto:teu.email@exemplo.com" style="color: var(--accent); text-decoration: none;">
-                                teu.email@exemplo.com
-                            </a>
-                            ou mensagem no LinkedIn.
-                        </p>
-                    </div>
-                </section>
-            </div>
-        </main>
-
-        <footer>
-            © <span id="year"></span> André Abrantes · Site de currículo simples em HTML &amp; CSS.
-        </footer>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-</div>
+  </header>
 
-<script>
-    // Atualizar ano automaticamente
+  <div class="page">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-main">
+        <div class="hero-kicker">
+          <span class="hero-kicker-dot"></span>
+          <span>Open to cloud &amp; IAM opportunities</span>
+        </div>
+        <h1 class="hero-title">
+          I build <span>secure &amp; automated</span> cloud environments.
+        </h1>
+        <p class="hero-subtitle">
+          I'm Renato Abrantes, an IT professional from Lisbon focused on identity, automation
+          and cloud. I like to take messy access, logs and infrastructure and turn them into
+          something secure, monitored and easy to manage.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            View featured projects →
+          </a>
+          <a href="#contact" class="btn btn-ghost">
+            Get in touch
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          Currently working in <strong>Helpdesk / IAM</strong> and finishing a
+          <strong>Master's in Cloud Computing</strong>.
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-orbit"></div>
+        <div class="hero-tagline">Snapshot</div>
+        <div class="hero-pill-row">
+          <div class="hero-pill">Azure AD &amp; Active Directory</div>
+          <div class="hero-pill">PowerShell automation</div>
+          <div class="hero-pill">Log Analytics &amp; monitoring</div>
+        </div>
+        <div style="margin-top: 10px; font-size: 0.88rem; line-height: 1.5;">
+          Hybrid environments, identity and logging are my comfort zone. I've been building
+          scripts to collect local admin data, ship it securely to Azure and give teams a
+          clear picture of what's happening on their machines.
+        </div>
+
+        <div class="hero-stat-row">
+          <div class="hero-stat">
+            <div class="hero-stat-label">Focus</div>
+            <div class="hero-stat-value">Cloud · IAM · Automation</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-label">Location</div>
+            <div class="hero-stat-value">Lisbon, Portugal</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-title">
+        <div class="section-kicker">About</div>
+        <h2 class="section-heading">Who I am &amp; how I work<span>.</span></h2>
+      </div>
+      <div class="section-grid two-cols">
+        <article class="card card-hover">
+          <div class="card-body">
+            I'm an IT engineer with a strong interest in cloud, identity and automation.
+            I currently work in a Helpdesk / IAM role, managing users, permissions and
+            troubleshooting daily issues in a hybrid environment (on-prem AD + Azure AD).
+            <br/><br/>
+            I'm the kind of person who enjoys understanding how things really work under
+            the hood and then scripting away the repetitive tasks. My goal is to grow into
+            a cloud / security role where I can design, automate and secure infrastructure
+            at scale.
+          </div>
+        </article>
+
+        <article class="card card-hover">
+          <div class="card-body">
+            <strong>What you can expect from me:</strong>
+            <ul class="list">
+              <li>I like to document, so others can reuse what I build.</li>
+              <li>I care about security and least-privilege access.</li>
+              <li>I enjoy taking ownership of small projects end-to-end.</li>
+              <li>I'm honest about what I know and what I still need to learn.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="section-title">
+        <div class="section-kicker">Skills</div>
+        <h2 class="section-heading">Things I'm comfortable working with<span>.</span></h2>
+      </div>
+      <div class="section-grid three-cols">
+        <article class="card card-hover">
+          <div class="card-label">Cloud &amp; Identity</div>
+          <div class="card-title">Azure &amp; IAM</div>
+          <div class="card-body">
+            <div class="pill-row">
+              <span class="pill">Azure AD / Entra ID</span>
+              <span class="pill">Active Directory</span>
+              <span class="pill">Groups &amp; access</span>
+              <span class="pill">Conditional access (basics)</span>
+              <span class="pill">Azure Monitor</span>
+              <span class="pill">Log Analytics</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card card-hover">
+          <div class="card-label">Automation</div>
+          <div class="card-title">Scripting &amp; tooling</div>
+          <div class="card-body">
+            <div class="pill-row">
+              <span class="pill">PowerShell</span>
+              <span class="pill">Python</span>
+              <span class="pill">REST APIs</span>
+              <span class="pill">JSON &amp; CSV handling</span>
+              <span class="pill">Git &amp; GitHub</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card card-hover">
+          <div class="card-label">Foundations</div>
+          <div class="card-title">Systems &amp; support</div>
+          <div class="card-body">
+            <div class="pill-row">
+              <span class="pill">Windows Server</span>
+              <span class="pill">Networking basics</span>
+              <span class="pill">User support</span>
+              <span class="pill">Printers &amp; devices</span>
+              <span class="pill">Documentation</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="section-title">
+        <div class="section-kicker">Experience</div>
+        <h2 class="section-heading">Where I've been putting this into practice<span>.</span></h2>
+      </div>
+      <div class="section-grid">
+        <article class="card card-hover">
+          <div class="card-label">Current role</div>
+          <div class="card-title">Helpdesk / IAM Technician</div>
+          <div class="card-meta">2023 – Present · Lisbon, Portugal</div>
+          <div class="card-body">
+            I support users, manage identities and help keep access under control in a
+            hybrid environment.
+            <ul class="list">
+              <li>Daily user and group management in Active Directory and Azure AD.</li>
+              <li>Automation of repetitive tasks with PowerShell scripts.</li>
+              <li>Troubleshooting login, permissions and connectivity issues.</li>
+              <li>Helping roll out more structured and auditable access processes.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card card-hover">
+          <div class="card-label">Education</div>
+          <div class="card-title">Computer Engineering &amp; Cloud</div>
+          <div class="card-meta">BSc in Computer Engineering · Master's in Cloud Computing (in progress)</div>
+          <div class="card-body">
+            My studies gave me a solid foundation in programming, databases, networks and
+            operating systems, and now I'm going deeper into cloud architectures, security
+            and DevOps practices.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-title">
+        <div class="section-kicker">Projects</div>
+        <h2 class="section-heading">A few things I'm proud of<span>.</span></h2>
+      </div>
+      <div class="section-grid">
+        <article class="card card-hover">
+          <div class="card-label">Security &amp; monitoring</div>
+          <div class="card-title">Local Administrators Monitoring</div>
+          <div class="card-meta">PowerShell · Azure · Log Analytics</div>
+          <div class="card-body">
+            Script that collects local administrator accounts from Windows machines and
+            sends them to Azure Log Analytics, so IT can audit who has powerful access
+            across the fleet.
+            <ul class="list">
+              <li>Uses an Azure Enterprise Application with certificate-based auth.</li>
+              <li>Ingests data via the Azure Monitor Logs Ingestion API into a custom table.</li>
+              <li>Designed to be secure, low-cost and easy to roll out with GPO.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card card-hover">
+          <div class="card-label">Academic project</div>
+          <div class="card-title">TravelBuddy – Trip planner</div>
+          <div class="card-meta">Python · APIs · PDF · Database</div>
+          <div class="card-body">
+            Application to help users plan trips by combining flights, tourist attractions
+            and a PDF summary of the whole itinerary.
+            <ul class="list">
+              <li>Integration with external APIs (e.g. Wikipedia) to fetch images &amp; info.</li>
+              <li>Attractions stored in a database and exportable to PDF with images.</li>
+              <li>Focused on a clean, practical interface for non-technical users.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card card-hover">
+          <div class="card-label">Side project</div>
+          <div class="card-title">Warranty Nest – Warranty manager</div>
+          <div class="card-meta">.NET MAUI · SQLite · UX</div>
+          <div class="card-body">
+            Mobile app concept to centralize product warranties, receipts and reminder
+            dates, so users don't lose track of coverage.
+            <ul class="list">
+              <li>Built with .NET MAUI and local storage.</li>
+              <li>Focused on simple, friendly UI instead of complex forms.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-title">
+        <div class="section-kicker">Contact</div>
+        <h2 class="section-heading">Let's talk about working together<span>.</span></h2>
+      </div>
+      <div class="contact-grid">
+        <article class="card card-hover">
+          <div class="card-body">
+            If you're looking for someone who likes to automate, document and keep access
+            under control, I'd be happy to talk.
+            <br/><br/>
+            I'm especially interested in roles around:
+            <ul class="list">
+              <li>Cloud / Azure engineering</li>
+              <li>Identity and access management</li>
+              <li>Security operations &amp; monitoring</li>
+              <li>Advanced technical support with room to grow</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card card-hover">
+          <div class="card-body">
+            <div class="contact-row">
+              <div class="contact-chip">
+                <strong>Email</strong>
+                <a href="mailto:teu.email@exemplo.com">teu.email@exemplo.com</a>
+              </div>
+              <div class="contact-chip">
+                <strong>LinkedIn</strong>
+                <a href="https://www.linkedin.com/in/o-teu-perfil" target="_blank">
+                  /in/o-teu-perfil
+                </a>
+              </div>
+              <div class="contact-chip">
+                <strong>GitHub</strong>
+                <a href="https://github.com/o-teu-user" target="_blank">
+                  @o-teu-user
+                </a>
+              </div>
+              <div class="contact-chip">
+                <strong>Location</strong>
+                Lisbon, Portugal
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Renato Abrantes · Built with pure HTML &amp; CSS.  
+      Hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+    </footer>
+  </div>
+
+  <script>
+    // Year
     document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-</body>
 
+    // Scroll reveal for cards
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("card-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    document.querySelectorAll(".card").forEach((card) => {
+      observer.observe(card);
+    });
+  </script>
+</body>
 </html>
